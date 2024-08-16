@@ -1,0 +1,3137 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/transport_ontology#"
+     xml:base="http://www.semanticweb.org/transport_ontology"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/accident"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#boolean -->
+
+    <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#boolean">
+        <rdfs:comment>Indica o nível de gravidade do dano (por exemplo, leve, moderado, grave)</rdfs:comment>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/accident#Afetada_por -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/accident#Afetada_por">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Via"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/accident#FatoresSocioEconomicos"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#Envolve -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/accident#Envolve">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Ocorrencia"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/accident#Acidente"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#EnvolveCiclista -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/accident#EnvolveCiclista">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/accident#EnvolvePessoa"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#EnvolveCondutor -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/accident#EnvolveCondutor">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/accident#EnvolvePessoa"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#EnvolvePassageiro -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/accident#EnvolvePassageiro">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/accident#EnvolvePessoa"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#EnvolvePedestre -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/accident#EnvolvePedestre">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/accident#EnvolvePessoa"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Acidente"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/accident#Pedestre"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#EnvolvePessoa -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/accident#EnvolvePessoa">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Acidente"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/accident#Pessoa"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#EnvolveVeiculo -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/accident#EnvolveVeiculo">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Acidente"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/accident#Veiculo"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#Fiscalizada_por -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/accident#Fiscalizada_por">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Via"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/accident#Fiscalizacao"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#Localizado_em -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/accident#Localizado_em">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Acidente"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Ocorrencia"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/accident#LocalizacaoGeografica"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#OcorreNaVia -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/accident#OcorreNaVia">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Acidente"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/accident#ViaDupla"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/accident#ViaMultipla"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/accident#ViaSimples"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#RecebeApoioDe -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/accident#RecebeApoioDe">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Acidente"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/accident#ApoioOutrosOrgaos"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#Regulamentada_por -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/accident#Regulamentada_por">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Via"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/accident#LegislacaoTransito"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#associadaAoAcidente -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/accident#associadaAoAcidente">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#CondicaoVia"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/accident#Acidente"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#classificadoComo -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/accident#classificadoComo">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#EstadoFisico"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/accident#Ignorado"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/accident#Ileso"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/accident#LesaoGrave"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/accident#LesaoLeve"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/accident#Morto"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#estaAssociadaAoAcidente -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/accident#estaAssociadaAoAcidente">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#CausaPresumivel"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/accident#Acidente"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#objetoDanificado -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/accident#objetoDanificado">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#DanoPatrimonioPublico"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/accident#DanoBarreirasConcreto"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/accident#DanoCanteirosCentrais"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/accident#DanoDefensas"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/accident#DanoPavimento"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/accident#DanoPlacasSinalizacao"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/accident#DanoPontesViadutos"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/accident#DanoPostes"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/accident#DanoRedesDrenagem"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/accident#DanoSemaforos"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/accident#DanoTunel"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#ocorreEmAcidente -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/accident#ocorreEmAcidente">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Dano"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/accident#Acidente"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#ocorreEmcondicaoPista -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/accident#ocorreEmcondicaoPista">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Acidente"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/accident#Via"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#ocorreSobCondicaoClimatica -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/accident#ocorreSobCondicaoClimatica">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Acidente"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/accident#CondicaoClimatica"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#possuiInfracao -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/accident#possuiInfracao">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Veiculo"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/accident#Infracao"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#prestadoPor -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/accident#prestadoPor">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#ApoioOutrosOrgaos"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/accident#Orgao"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#proprietarioEnvolvidoAcidente -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/accident#proprietarioEnvolvidoAcidente">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Pessoa"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/accident#Acidente"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#regidoPorLegislacao -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/accident#regidoPorLegislacao">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Acidente"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/accident#LegislacaoTransito"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#relacionadaCom -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/accident#relacionadaCom">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#CondicaoClimatica"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/accident#Acidente"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#relacionadoA -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/accident#relacionadoA">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Dano"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/accident#Acidente"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#temApoio -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/accident#temApoio">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Acidente"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/accident#ApoioOutrosOrgaos"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#temCausaPresumivel -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/accident#temCausaPresumivel">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Acidente"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/accident#CausaPresumivel"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#temCondicaoVia -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/accident#temCondicaoVia">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Acidente"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/accident#ComBuraco"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/accident#ComGelo"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/accident#ComLama"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/accident#ComMaterialGranulado"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/accident#Escorregadia"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/accident#Molhada"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/accident#Seca"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#temCondutor -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/accident#temCondutor">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Veiculo"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/accident#Condutor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#temEstadoFisico -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/accident#temEstadoFisico">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Pessoa"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/accident#EstadoFisico"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#temFatorAgravante -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/accident#temFatorAgravante">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Acidente"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/accident#FatorAgravante"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#temFatorContribuinte -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/accident#temFatorContribuinte">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Acidente"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/accident#FatorContribuinte"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#temFatorDeterminante -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/accident#temFatorDeterminante">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Acidente"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/accident#FatorDeterminante"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#temInfracao -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/accident#temInfracao">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Veiculo"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/accident#Infracao"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#temManutencao -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/accident#temManutencao">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Veiculo"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/accident#ManutencaoVeiculo"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#temPassageiroEnvolvido -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/accident#temPassageiroEnvolvido">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Veiculo"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/accident#Passageiro"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#temProprietario -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/accident#temProprietario">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Veiculo"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/accident#Pessoa"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#temTipoDeCondicao -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/accident#temTipoDeCondicao">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Via"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/accident#CondicaoVia"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#temVeiculoEnvolvido -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/accident#temVeiculoEnvolvido">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Acidente"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/accident#Veiculo"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#tipoDeApoio -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/accident#tipoDeApoio">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#ApoioOutrosOrgaos"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/accident#TipoApoio"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#tipoDeDano -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/accident#tipoDeDano">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Dano"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/accident#ContaminacaoAgua"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/accident#ContaminacaoSolo"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/accident#DanoRecursosHidricos"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/accident#DanosVegetacao"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/accident#ErosaoSolo"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/accident#IncendioFlorestal"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/accident#PoluicaoAr"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#veiculoEnvolvidoEmAcidente -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/accident#veiculoEnvolvidoEmAcidente">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Veiculo"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/accident#Acidente"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/accident#Acostamento -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#Acostamento">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Via"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#AguaAcumulada -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#AguaAcumulada">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#CondicaoVia"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#AlturaDoPoste -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#AlturaDoPoste">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#DanoPostes"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#AnoFabricacao -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#AnoFabricacao">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Veiculo"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#AreaAfetada -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#AreaAfetada">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#DanoCanteirosCentrais"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#Articulacao -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#Articulacao">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Veiculo"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>Se o veículo é articulado</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#AtendeLegisCronotacografo -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#AtendeLegisCronotacografo">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Veiculo"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#AtendeLegisTempoParada -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#AtendeLegisTempoParada">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Veiculo"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#AuxilioOutroOrgao -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#AuxilioOutroOrgao">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#ApoioOutrosOrgaos"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#BR -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#BR">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Via"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#BRInfracao -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#BRInfracao">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Infracao"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#CanteiroCentral -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#CanteiroCentral">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Via"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#CartaVerde -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#CartaVerde">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Veiculo"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>Se possui seguro obrigatório para veículos do Mercosul</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#CategoriaCNH -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#CategoriaCNH">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Condutor"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#CategoriaVeiculo -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#CategoriaVeiculo">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Veiculo"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Aluguel, Particular</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#CausaDoIncendio -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#CausaDoIncendio">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Incendio"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#CausaPrincipal -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#CausaPrincipal">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Acidente"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Causas Presumíveis do Acidente:
+
+Humanas/Comportamentais
+Pedestre andava na pista
+Entrada inopinada do pedestre
+Pedestre cruzava a pista fora da faixa
+Ausência de reação do condutor
+Reação tardia ou ineficiente do condutor
+Condutor deixou de manter distância
+Não acionar o farol baixo durante o dia em rodovias de pista simples
+Desrespeitar a iluminação vermelha do semáforo
+Velocidade incompatível
+Conversão proibida
+Retorno proibido
+Manobra de mudança de faixa
+Desrespeitar a preferência no cruzamento
+Acessar o leito carroçável sem observar a presença dos outros veículos
+Transitar na calçada
+Transitar na contramão
+Transitar no acostamento
+Ultrapassagem indevida
+Participar de racha
+Frear bruscamente
+Estacionar ou parar em local proibido
+Deixar de acionar o farol da motocicleta (ou similar)
+Trafegar com motocicleta (ou similar) entre as faixas
+Ingestão de álcool pelo condutor
+Ingestão de substâncias psicoativas pelo condutor
+Ingestão de álcool ou de substâncias psicoativas pelo pedestre
+Mal súbito do condutor
+Condutor dormindo
+Condutor usando celular
+
+Viário/ambientais
+Pista esburacada
+Declive acentuado
+Iluminação deficiente
+Redutor de velocidade em desacordo
+Acúmulo de areia ou detritos sobre o pavimento
+Acúmulo de óleo sobre o pavimento
+Acúmulo de água sobre o pavimento
+Chuva
+Neblina
+Demais fenômenos da natureza
+Ausência de sinalização
+Sinalização encoberta
+Sinalização mal posicionada
+Semáforo com defeito
+Objeto estático sobre o leito carroçável
+Animais na pista
+Falta de elemento de contenção que evite a saída do leito carroçável 
+Área urbana sem a presença de local apropriado para a travessia de pedestres
+Fumaça
+Desnível entre a pista e o acostamento
+Falta de acostamento
+Acesso irregular
+Restrição de visibilidade em curvas horizontais
+Restrição de visibilidade em curvas verticais
+Faixas de trânsito com largura insuficiente
+Afundamento ou ondulação no pavimento
+Sistema de drenagem ineficiente
+Demais falhas na via
+
+Veiculares
+Avarias e/ou desgaste excessivo no pneu 
+Carga excessiva e/ou mal acondicionada
+Modificação proibida
+Deficiência do sistema de iluminação/sinalização 
+Faróis desregulados
+Problema com o freio
+Problema na suspensão 
+Demais falhas mecânicas ou elétricas</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#CausasConcorrentes -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#CausasConcorrentes">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Acidente"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Constarão no campo Narrativa do Acidente:
+O Fator Determinante, os fatores contribuintes e os fatores agravantes.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#CdIBGEMunicipio -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#CdIBGEMunicipio">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#LocalizacaoGeografica"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#ClassificacaoAcidente -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#ClassificacaoAcidente">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Acidente"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#CodigoInfracao -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#CodigoInfracao">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#Comparecimento -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#Comparecimento">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#ApoioOutrosOrgaos"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>Se houve comparecimento de outro órgão</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#CondicaoClimatica -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#CondicaoClimatica"/>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#CondicaoMeteorologica -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#CondicaoMeteorologica">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:comment>Sol, Nublado, Neve, Chuva, Vento, Granizo, Ceu claro, Garoa/Chuvisco, Nevoeiro/Neblina</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#CorVeiculo -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#CorVeiculo">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Veiculo"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#CronotacografoObrigatorio -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#CronotacografoObrigatorio">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Veiculo"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#CustoEstimadoDano -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#CustoEstimadoDano">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Dano"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#DHAcionamentoOutrosOrgaos -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#DHAcionamentoOutrosOrgaos">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#ApoioOutrosOrgaos"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#DHComparecimento -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#DHComparecimento">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#ApoioOutrosOrgaos"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#DHFimAtendimentoOcorrencia -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#DHFimAtendimentoOcorrencia">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Ocorrencia"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#DHInicioAtendimentoOcorrencia -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#DHInicioAtendimentoOcorrencia">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Ocorrencia"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#DHOcorrencia -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#DHOcorrencia">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Ocorrencia"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#DHSolicitacaoOcorrencia -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#DHSolicitacaoOcorrencia">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Ocorrencia"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>Data hora da solicitacao de atendimento</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#DSCarga -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#DSCarga">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Veiculo"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Descrição da carga transportada.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#DSProdutosPerigosos -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#DSProdutosPerigosos">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Veiculo"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Descrição dos Produtos Perigosos Transportados</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#DanoMeioAmbiente -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#DanoMeioAmbiente">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Via"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#DanoPatrimonio -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#DanoPatrimonio">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Via"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#Data1Habilitacao -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#Data1Habilitacao">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Condutor"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#DataAcidente -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#DataAcidente">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#LocalizacaoGeografica"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#DataHoraInfracao -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#DataHoraInfracao">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#DataNascimento -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#DataNascimento">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Pessoa"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#DataOcorrencia -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#DataOcorrencia"/>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#Desc_Dano_Patrimonio -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#Desc_Dano_Patrimonio">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#DescricaoApoio -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#DescricaoApoio">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#ApoioOutrosOrgaos"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#DescricaoInfracao -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#DescricaoInfracao">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Infracao"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#DiaSemana -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#DiaSemana"/>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#DiscoRecolhido -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#DiscoRecolhido">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Veiculo"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#Emprego -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#Emprego"/>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#EncaminhamentoPessoa -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#EncaminhamentoPessoa">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Pessoa"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#EncaminhamentoVeiculo -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#EncaminhamentoVeiculo">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Veiculo"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#EnderecoAcidente -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#EnderecoAcidente">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#LocalizacaoGeografica"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#EspecieArvore -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#EspecieArvore">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#DanosVegetacao"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#EspecieVeiculo -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#EspecieVeiculo">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Veiculo"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#EstadoCivil -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#EstadoCivil">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Pessoa"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#EstadoFisico -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#EstadoFisico"/>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#EstadoInfraestrutura -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#EstadoInfraestrutura"/>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#EstruturaVia -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#EstruturaVia">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Via"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Curva, Declive, Viaduto, Retorno Regulamento</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#EventosSucessivos -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#EventosSucessivos">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Acidente"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#ExisteCronotacografo -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#ExisteCronotacografo">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Veiculo"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#ExtensaoDano -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#ExtensaoDano">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#DanoDefensas"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#DanoPavimento"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#FaseDia -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#FaseDia">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Pleno Dia, Plena Noite, Amanhecer, Anoitecer</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#FrequenciaUsoVia -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#FrequenciaUsoVia"/>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#GrauInstrucao -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#GrauInstrucao">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Condutor"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Doutorado, Mestrado, Especialização, Superior Completo, Superior Incompleto, 2grau completo, 2grau incompleto, 1grau completo, 1grau incompleto, ensino fundamental.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#GravidadeAcidente -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#GravidadeAcidente"/>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#GravidadeInfracao -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#GravidadeInfracao">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Infracao"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#HabilitacaoInternacional -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#HabilitacaoInternacional">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Condutor"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#HouveLiberacao -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#HouveLiberacao">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Veiculo"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Se o veículo foi liberado</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#ID_OCORRENCIA -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#ID_OCORRENCIA"/>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#IluminacaoArtificial -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#IluminacaoArtificial">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Via"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#IntensidadeDoImpacto -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#IntensidadeDoImpacto">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Atropelamento"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Colisao"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#IntensidadeFiscalizacao -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#IntensidadeFiscalizacao"/>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#IntensidadePrecipitacao -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#IntensidadePrecipitacao">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#ApoioOutrosOrgaos"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Chuva"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#GaroaChuvisco"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Granizo"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Neve"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#KM -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#KM">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#LocalizacaoGeografica"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#KMInfracao -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#KMInfracao">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Infracao"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#Latitude -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#Latitude">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#LocalizacaoGeografica"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#LegislacaoAplicada -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#LegislacaoAplicada">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#LegislacaoTransito"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#LocalOcorrencia -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#LocalOcorrencia"/>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#Longitude -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#Longitude">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#LocalizacaoGeografica"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#ManobraAcidente -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#ManobraAcidente">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Veiculo"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Manobra do veículo no acidente</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#MarcaModelo -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#MarcaModelo">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Veiculo"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#MaterialDefensas -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#MaterialDefensas">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#DanoDefensas"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#MaterialElementoDanificado -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#MaterialElementoDanificado">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#DanoPatrimonioPublico"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#MortePosRemocao -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#MortePosRemocao">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Pessoa"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>Se a pessoa morreu após a remoção</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#MotivoEncaminVeiculo -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#MotivoEncaminVeiculo">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Veiculo"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#MotivoEncaminhamento -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#MotivoEncaminhamento">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Pessoa"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Crime, Socorro Médico</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#MotoristaProfissional -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#MotoristaProfissional">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Condutor"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#MunicipioAcidente -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#MunicipioAcidente">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#LocalizacaoGeografica"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#MunicipioResidencia -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#MunicipioResidencia">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Pessoa"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#Narrativa -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#Narrativa">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Acidente"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#NivelEducacao -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#NivelEducacao"/>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#NivelGravidadeDano -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#NivelGravidadeDano">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Dano"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Indica o nível de gravidade do dano (por exemplo, leve, moderado, grave)</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#NomeComunicante -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#NomeComunicante">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Ocorrencia"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Quem comunicou a ocorrência do acidente</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#NomePessoa -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#NomePessoa">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Pessoa"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#NormasRespeitadas -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#NormasRespeitadas"/>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#ObrDispRetCrianca -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#ObrDispRetCrianca">
+        <rdfs:comment>Obrigatório a dispensa do dispositivo de retenção de criança</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#ObservacaoApoio -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#ObservacaoApoio">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#ApoioOutrosOrgaos"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#PaisHabilitacao -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#PaisHabilitacao">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Condutor"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#Penalidades -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#Penalidades"/>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#PessoaNaoIdentificada -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#PessoaNaoIdentificada">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Pessoa"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#PlacaVeiculo -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#PlacaVeiculo">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Veiculo"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#PontosCNH -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#PontosCNH">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#PresencaBuracos -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#PresencaBuracos">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#CondicaoVia"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#ProdutoPerigoso -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#ProdutoPerigoso">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Veiculo"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#PsbTesteAlcoolemia -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#PsbTesteAlcoolemia">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Condutor"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#RecTesteAlcoolemia -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#RecTesteAlcoolemia">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Condutor"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>Se o condutor recusou a realizar o teste de alcoolemia</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#ReceptorPessoa -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#ReceptorPessoa">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Pessoa"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#ReceptorVeiculo -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#ReceptorVeiculo">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Veiculo"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Local onde recebeu o veículo (Seguradora, Depósito ...)</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#RecolheuCIPP -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#RecolheuCIPP">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Veiculo"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#RecolheuCIV -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#RecolheuCIV">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Veiculo"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#Renda -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#Renda"/>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#ResultadoEtilometro -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#ResultadoEtilometro">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Condutor"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#SentidoVia -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#SentidoVia">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#LocalizacaoGeografica"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#SentidoViaInfracao -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#SentidoViaInfracao">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Infracao"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#Sequencial -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#Sequencial">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Veiculo"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Identificação Sequencial do Veículo no Acidente: V1, V2 ,,,</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#SexoPessoa -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#SexoPessoa">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Pessoa"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#SinaisEvidentesdeMorte -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#SinaisEvidentesdeMorte">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Morto"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>i estado de decomposição;
+ii decapitação ou segmentação do tronco;
+iii esmagamento do corpo;
+iv esmagamento de crânio com perda de massa encefálica e ausência
+de sinais vitais; 
+v carbonização do corpo;
+vi rigidez cadavérica;
+vii lesões e deformidades que descartem qualquer possibilidade de
+vida.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#SnsEmbriagues -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#SnsEmbriagues">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Condutor"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#SnsUsoPsicoativos -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#SnsUsoPsicoativos">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Condutor"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>O condutor apresenta sinais do uso de psicoativos</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#StatusCNH -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#StatusCNH">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Status da CNH (ativa, suspensa, cassada).</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#StatusPagamentoinfracao -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#StatusPagamentoinfracao">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>paga, pendente, em recurso</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#Superdimensionado -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#Superdimensionado">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Veiculo"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#TemperaturaClima -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#TemperaturaClima">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#CondicaoClimatica"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#TempoResposta -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#TempoResposta">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#ApoioOutrosOrgaos"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#TerminoAtendimentoAcidente -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#TerminoAtendimentoAcidente">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Acidente"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#TerminoAtendimentoOcorrencia -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#TerminoAtendimentoOcorrencia">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Ocorrencia"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#TipoApoio -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#TipoApoio"/>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#TipoDeAnimal -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#TipoDeAnimal">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#AtropelamentoDeAnimal"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#TipoDeCarga -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#TipoDeCarga">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#DerramamentoDeCarga"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#TipoDePoste -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#TipoDePoste">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#DanoPostes"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Madeira, metal, concreto.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#TipoEstruturaVeiculo -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#TipoEstruturaVeiculo">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Veiculo"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Chassi, Monobloco</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#TipoEvento -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#TipoEvento">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Acidente"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#TipoFiscalizacao -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#TipoFiscalizacao">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Fiscalizacao"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#TipoInfraestrutura -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#TipoInfraestrutura"/>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#TipoMaterial -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#TipoMaterial">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#DanoPlacasSinalizacao"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#DanoPostes"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Metal, Plástico, Madeira, etc.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#TipoMonta -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#TipoMonta">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Veiculo"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Pequena, Média ou Grande</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#TipoOrgao -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#TipoOrgao">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#ApoioOutrosOrgaos"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Nome do Órgão que prestou apoio</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#TipoPavimento -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#TipoPavimento">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Via"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Cascalho, Asfalto, Paralepípedo, Concreto e Terra</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#TipoPista -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#TipoPista">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Via"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Simples, Dupla, Múltipla</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#TipoSinalizacao -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#TipoSinalizacao">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Indicativa, regulamentadora, de advertência.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#TipoVeiculo -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#TipoVeiculo">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Veiculo"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Automóvel, Motoneta, Caminhão...</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#TipoVia -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#TipoVia">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Via"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Marginal, Principal</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#Tipo_Pavimento -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#Tipo_Pavimento">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#Trecho -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#Trecho">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#LocalizacaoGeografica"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Urbano, Rural</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#UFAcidente -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#UFAcidente">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#LocalizacaoGeografica"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Unidade da Federação onde aconteceu o acidente</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#UFInfracao -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#UFInfracao">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Infracao"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#UmidadeRelativa -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#UmidadeRelativa">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#CondicaoClimatica"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#Urbanizacao -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#Urbanizacao">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Via"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#UsoCorretoCapacete -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#UsoCorretoCapacete">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Ciclista"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Condutor"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Sim, Não, Ignorado</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#UsoCorretoCinto -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#UsoCorretoCinto">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Condutor"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Passageiro"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#ValidadeCartaVerde -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#ValidadeCartaVerde">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Veiculo"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#ValidadeHabilitacao -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#ValidadeHabilitacao">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Condutor"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#ValorInfracao -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#ValorInfracao">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#VelocidadeNoMomento -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#VelocidadeNoMomento">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Acidente"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#VelocidadeVento -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#VelocidadeVento">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#Vento"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#VisibilidadeVia -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#VisibilidadeVia">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#NevoeiroNeblina"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#VolumeTrafego -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#VolumeTrafego"/>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#tipoDeContaminacao -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/accident#tipoDeContaminacao">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#ContaminacaoAgua"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/accident#ContaminacaoSolo"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/accident#Acidente -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/accident#Acidente">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/accident#Ocorrencia"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/accident#temVeiculoEnvolvido"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/accident#Veiculo"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#AcidenteComImpacto -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/accident#AcidenteComImpacto">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/accident#Acidente"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/accident#AcidenteSemImpacto"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#AcidenteSemImpacto -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/accident#AcidenteSemImpacto">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/accident#Acidente"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#ApoioOutrosOrgaos -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/accident#ApoioOutrosOrgaos"/>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#AssistenciaMedica -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/accident#AssistenciaMedica">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/accident#TipoApoio"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#Atropelamento -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/accident#Atropelamento">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/accident#AcidenteComImpacto"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#AtropelamentoDeAnimal -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/accident#AtropelamentoDeAnimal">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/accident#Atropelamento"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#AtropelamentoDePessoa -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/accident#AtropelamentoDePessoa">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/accident#Atropelamento"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#Bombeiros -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/accident#Bombeiros">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/accident#Orgao"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#Capotamento -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/accident#Capotamento">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/accident#AcidenteSemImpacto"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#CausaHumanaComportamental -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/accident#CausaHumanaComportamental">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/accident#CausaPresumivel"/>
+        <rdfs:comment>Pedestre andava na pista
+Entrada inopinada do pedestre
+Pedestre cruzava a pista fora da faixa
+Ausência de reação do condutor
+Reação tardia ou ineficiente do condutor
+Condutor deixou de manter distância
+Não acionar o farol baixo durante o dia em rodovias de pista simples
+Desrespeitar a iluminação vermelha do semáforo
+Velocidade incompatível
+Conversão proibida
+Retorno proibido
+Manobra de mudança de faixa
+Desrespeitar a preferência no cruzamento
+Acessar o leito carroçável sem observar a presença dos outros veículos
+Transitar na calçada
+Transitar na contramão
+Transitar no acostamento
+Ultrapassagem indevida
+Participar de racha
+Frear bruscamente
+Estacionar ou parar em local proibido
+Deixar de acionar o farol da motocicleta (ou similar)
+Trafegar com motocicleta (ou similar) entre as faixas
+Ingestão de álcool pelo condutor
+Ingestão de substâncias psicoativas pelo condutor
+Ingestão de álcool ou de substâncias psicoativas pelo pedestre
+Mal súbito do condutor
+Condutor dormindo
+Condutor usando celular</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#CausaPresumivel -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/accident#CausaPresumivel">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/accident#temCausaPresumivel"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/accident#CausaPresumivel"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#CausaVeicular -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/accident#CausaVeicular">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/accident#CausaPresumivel"/>
+        <rdfs:comment>Avarias e/ou desgaste excessivo no pneu 
+Carga excessiva e/ou mal acondicionada
+Modificação proibida
+Deficiência do sistema de iluminação/sinalização 
+Faróis desregulados
+Problema com o freio
+Problema na suspensão 
+Demais falhas mecânicas ou elétricas</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#CausaViariaAmbiental -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/accident#CausaViariaAmbiental">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/accident#CausaPresumivel"/>
+        <rdfs:comment>Pista esburacada
+Declive acentuado
+Iluminação deficiente
+Redutor de velocidade em desacordo
+Acúmulo de areia ou detritos sobre o pavimento
+Acúmulo de óleo sobre o pavimento
+Acúmulo de água sobre o pavimento
+Chuva
+Neblina
+Demais fenômenos da natureza
+Ausência de sinalização
+Sinalização encoberta
+Sinalização mal posicionada
+Semáforo com defeito
+Objeto estático sobre o leito carroçável
+Animais na pista
+Falta de elemento de contenção que evite a saída do leito carroçável 
+Área urbana sem a presença de local apropriado para a travessia de pedestres
+Fumaça
+Desnível entre a pista e o acostamento
+Falta de acostamento
+Acesso irregular
+Restrição de visibilidade em curvas horizontais
+Restrição de visibilidade em curvas verticais
+Faixas de trânsito com largura insuficiente
+Afundamento ou ondulação no pavimento
+Sistema de drenagem ineficiente
+Demais falhas na via</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#CeuClaro -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/accident#CeuClaro">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/accident#CondicaoClimatica"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#Chuva -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/accident#Chuva">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/accident#CondicaoClimatica"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#Ciclista -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/accident#Ciclista">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/accident#Pessoa"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#Colisao -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/accident#Colisao">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/accident#AcidenteComImpacto"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#ColisaoComObjetoFixo -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/accident#ColisaoComObjetoFixo">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/accident#Colisao"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#ColisaoFrontal -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/accident#ColisaoFrontal">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/accident#Colisao"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#ColisaoLateralMesmoSentido -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/accident#ColisaoLateralMesmoSentido">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/accident#Colisao"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#ColisaoLateralSentidoOposto -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/accident#ColisaoLateralSentidoOposto">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/accident#Colisao"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#ColisaoTransversal -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/accident#ColisaoTransversal">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/accident#Colisao"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#ColisaoTraseira -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/accident#ColisaoTraseira">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/accident#Colisao"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#ComBuraco -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/accident#ComBuraco">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/accident#CondicaoVia"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#ComGelo -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/accident#ComGelo">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/accident#CondicaoVia"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#ComLama -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/accident#ComLama">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/accident#CondicaoVia"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#ComMaterialGranulado -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/accident#ComMaterialGranulado">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/accident#CondicaoVia"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#CondicaoClimatica -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/accident#CondicaoClimatica"/>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#CondicaoVia -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/accident#CondicaoVia"/>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#Condutor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/accident#Condutor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/accident#Pessoa"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#ContaminacaoAgua -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/accident#ContaminacaoAgua">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/accident#DanoAmbiental"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#ContaminacaoSolo -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/accident#ContaminacaoSolo">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/accident#DanoAmbiental"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#ControleTrafego -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/accident#ControleTrafego">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/accident#TipoApoio"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#DadosExposicao -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/accident#DadosExposicao"/>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#Dano -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/accident#Dano">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/accident#relacionadoA"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/accident#Acidente"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#DanoAmbiental -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/accident#DanoAmbiental">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/accident#Dano"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#DanoBarreirasConcreto -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/accident#DanoBarreirasConcreto">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/accident#DanoPatrimonioPublico"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#DanoCanteirosCentrais -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/accident#DanoCanteirosCentrais">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/accident#DanoPatrimonioPublico"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#DanoDefensas -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/accident#DanoDefensas">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/accident#DanoPatrimonioPublico"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#DanoPatrimonioPublico -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/accident#DanoPatrimonioPublico">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/accident#Dano"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#DanoPavimento -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/accident#DanoPavimento">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/accident#DanoPatrimonioPublico"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#DanoPlacasSinalizacao -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/accident#DanoPlacasSinalizacao">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/accident#DanoPatrimonioPublico"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#DanoPontesViadutos -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/accident#DanoPontesViadutos">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/accident#DanoPatrimonioPublico"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#DanoPostes -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/accident#DanoPostes">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/accident#DanoPatrimonioPublico"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#DanoRecursosHidricos -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/accident#DanoRecursosHidricos">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/accident#DanoAmbiental"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#DanoRedesDrenagem -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/accident#DanoRedesDrenagem">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/accident#DanoPatrimonioPublico"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#DanoSemaforos -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/accident#DanoSemaforos">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/accident#DanoPatrimonioPublico"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#DanoTunel -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/accident#DanoTunel">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/accident#DanoPatrimonioPublico"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#DanosVegetacao -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/accident#DanosVegetacao">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/accident#DanoAmbiental"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#DerramamentoDeCarga -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/accident#DerramamentoDeCarga">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/accident#AcidenteSemImpacto"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#Engavetamento -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/accident#Engavetamento">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/accident#Colisao"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#ErosaoSolo -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/accident#ErosaoSolo">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/accident#DanoAmbiental"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#Escorregadia -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/accident#Escorregadia">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/accident#CondicaoVia"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#EstadoFisico -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/accident#EstadoFisico"/>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#EventoAtipico -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/accident#EventoAtipico">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/accident#Acidente"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#FAHumanosComportamentais -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/accident#FAHumanosComportamentais">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/accident#FatorAgravante"/>
+        <rdfs:comment>Deixar de usar cinto de segurança 
+Deixar de usar capacete
+Criança sem dispositivo de retenção
+Velocidade incompatível, sendo necessária a comprovação (cálculo de velocidade,
+cronotacógrafo atendendo todos os requisitos legais, entre outros)</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#FAVeicular -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/accident#FAVeicular">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/accident#FatorAgravante"/>
+        <rdfs:comment>Carga excessiva e/ou mal acondicionada
+Carga no compartimento de passageiros</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#FAViarioAmbiental -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/accident#FAViarioAmbiental">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/accident#FatorAgravante"/>
+        <rdfs:comment>Acostamento em desnível
+Desnível em relação ao final do leito carroçável e a faixa de domínio adjacente
+Falta de elemento de contenção que evite a saída do leito carroçável
+Pista esburacada
+Objeto estático sobre o leito carroçável
+Objeto estático na faixa de domínio adjacente
+Pista em desnível</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#FCHumanoComportamental -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/accident#FCHumanoComportamental">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/accident#FatorContribuinte"/>
+        <rdfs:comment>Presença de pedestre na pista
+Pedestre cruzava a pista fora da faixa
+Ausência de reação do condutor, não materializada em evidências
+Reação ineficaz do condutor, materializada em evidências
+Deixar de manter distância do veículo da frente
+Não acionamento do sistema de iluminação e/ou de sinalização do veículo conforme
+a legislação aplicada
+Desrespeito à iluminação vermelha do semáforo
+Velocidade incompatível, sendo necessária a comprovação (cálculo de velocidade,
+cronotacógrafo atendendo todos os requisitos legais, entre outros)
+Conversão proibida
+Retorno proibido
+Manobra de mudança de faixa
+Desrespeito à preferência no cruzamento
+Acesso à via sem observar a presença dos outros veículos
+Trânsito de veículos na calçada
+Trânsito de veículos na contramão
+Trânsito de veículos no acostamento
+Ultrapassagem indevida
+Participação em racha
+Frenagem brusca
+Estacionamento ou parada em local proibido
+Não acionamento do farol da motocicleta (ou similar)
+Trafego de motocicleta (ou similar) entre as faixas
+Ingestão de álcool pelo condutor
+Ingestão de substâncias psicoativas pelo condutor
+Ingestão de álcool ou de substâncias psicoativas pelo pedestre
+Mal súbito do condutor
+Condutor dormindo</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#FCVeicular -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/accident#FCVeicular">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/accident#FatorContribuinte"/>
+        <rdfs:comment>Alteração proibida
+Avarias e/ou desgaste excessivo no pneu 
+Carga excessiva e/ou mal acondicionada
+Deficiência do sistema de iluminação/sinalização do veículo
+Faróis desregulados
+Defeito no sistema de freio
+Defeito no sistema de suspensão
+Demais falhas mecânicas ou elétricas (descrever a falha)</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#FCViarioAmbiental -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/accident#FCViarioAmbiental">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/accident#FatorContribuinte"/>
+        <rdfs:comment>Ausência de local apropriado para travessia de pedestres
+Curva acentuada
+Declive ou aclive acentuados
+Iluminação ineficiente ou inexistente
+Obras na pista
+Desvio temporário
+Redutor de velocidade em desacordo
+Acúmulo de areia ou detritos sobre o pavimento
+Acúmulo de óleo sobre o pavimento
+Acúmulo de água sobre o pavimento
+Chuva
+Ausência de sinalização
+Sinalização encoberta
+Sinalização mal posicionada
+Pista esburacada
+Semáforo com defeito
+Objeto estático sobre o leito carroçável
+Animais na pista
+Fenômenos da natureza
+Neblina
+Falta de elemento de contenção que evite a saída do leito carroçável 
+Obstrução na via
+Fumaça
+Acostamento em desnível irregular
+Desnível entre a pista e a sua margem (em locais desprovidos de acostamento)
+Falta de acostamento</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#FatorAgravante -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/accident#FatorAgravante"/>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#FatorContribuinte -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/accident#FatorContribuinte"/>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#FatorDeterminante -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/accident#FatorDeterminante"/>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#FatoresSocioEconomicos -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/accident#FatoresSocioEconomicos"/>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#Fiscalizacao -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/accident#Fiscalizacao"/>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#GaroaChuvisco -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/accident#GaroaChuvisco">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/accident#CondicaoClimatica"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#Granizo -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/accident#Granizo">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/accident#CondicaoClimatica"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#HumanoComportamental -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/accident#HumanoComportamental">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/accident#FatorDeterminante"/>
+        <rdfs:comment>Perda do controle da direção 
+Ocupação da faixa contrária
+Ausência de reação do condutor, não materializada em evidências
+Reação ineficaz do condutor, materializada em evidências
+Tráfego no acostamento
+Tráfego pela contramão
+Tráfego entre as faixas
+Presença de pedestre na pista
+Manobra de retorno
+Manobra de conversão
+Manobra de acesso à rodovia
+Manobra de mudança de faixa
+Velocidade incompatível, sendo necessária a comprovação (cálculo de velocidade,
+cronotacógrafo atendendo todos os requisitos legais, entre outros)</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#Ignorado -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/accident#Ignorado">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/accident#EstadoFisico"/>
+        <rdfs:comment>É quando não há informações a respeito do estado físico
+do envolvido não localizado</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#Ileso -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/accident#Ileso">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/accident#EstadoFisico"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#Incendio -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/accident#Incendio">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/accident#AcidenteSemImpacto"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#IncendioFlorestal -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/accident#IncendioFlorestal">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/accident#DanoAmbiental"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#Infracao -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/accident#Infracao"/>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#Investigacao -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/accident#Investigacao">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/accident#TipoApoio"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#LegislacaoTransito -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/accident#LegislacaoTransito"/>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#LesaoGrave -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/accident#LesaoGrave">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/accident#Lesionado"/>
+        <rdfs:comment>pessoa lesionada que, por consequência da dinâmica do acidente, não foi classificada como leve ou não tenha como resultado o óbito.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#LesaoLeve -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/accident#LesaoLeve">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/accident#Lesionado"/>
+        <rdfs:comment>Pessoa lesionada que apresente, por consequência da dinâmica do acidente, ao menos um sinal aparente da lista a seguir:
+
+● pequenos cortes, contusões e escoriações (inclusive as
+provocadas por cinto de segurança);
+● queimaduras de 1º grau. (Até 10% da superfície corporal);
+● fratura dos dentes
+● pequenas hemorragias externas;
+● pequenas entorses;
+● luxações e/ou fraturas fechadas ou abertas dos dedos.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#Lesionado -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/accident#Lesionado">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/accident#EstadoFisico"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#LocalizacaoGeografica -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/accident#LocalizacaoGeografica"/>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#ManutencaoVeiculo -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/accident#ManutencaoVeiculo"/>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#Molhada -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/accident#Molhada">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/accident#CondicaoVia"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#Morto -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/accident#Morto">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/accident#EstadoFisico"/>
+        <rdfs:comment>MORTO é a pessoa que, por consequência da dinâmica do
+acidente, veio a óbito no local do atendimento de acidente de trânsito
+com a condição de morto constatada por profissional legalmente
+habilitado ou com sinais evidentes de morte42. São sinais evidentes de
+morte:
+i estado de decomposição;
+ii decapitação ou segmentação do tronco;
+iii esmagamento do corpo;
+iv esmagamento de crânio com perda de massa encefálica e ausência
+de sinais vitais; 
+v carbonização do corpo;
+vi rigidez cadavérica;
+vii lesões e deformidades que descartem qualquer possibilidade de
+vida.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#Motocicleta -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/accident#Motocicleta">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/accident#Veiculo"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#Neve -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/accident#Neve">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/accident#CondicaoClimatica"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#NevoeiroNeblina -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/accident#NevoeiroNeblina">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/accident#CondicaoClimatica"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#Nublado -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/accident#Nublado">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/accident#CondicaoClimatica"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#Ocorrencia -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/accident#Ocorrencia"/>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#Orgao -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/accident#Orgao"/>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#OutrosOrgaos -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/accident#OutrosOrgaos">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/accident#Orgao"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#Passageiro -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/accident#Passageiro">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/accident#Pessoa"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#Pedestre -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/accident#Pedestre">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/accident#Pessoa"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#Pessoa -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/accident#Pessoa">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/accident#proprietarioEnvolvidoAcidente"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/accident#Acidente"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#PoliciaMilitar -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/accident#PoliciaMilitar">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/accident#Orgao"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#PoluicaoAr -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/accident#PoluicaoAr">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/accident#DanoAmbiental"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#QuedaDeOcupanteDeVeiculo -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/accident#QuedaDeOcupanteDeVeiculo">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/accident#Acidente"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#Resgate -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/accident#Resgate">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/accident#TipoApoio"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#SAMU -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/accident#SAMU">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/accident#Orgao"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#SaidaDeLeitoCarrocavel -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/accident#SaidaDeLeitoCarrocavel">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/accident#Acidente"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#Seca -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/accident#Seca">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/accident#CondicaoVia"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#Sol -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/accident#Sol">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/accident#CondicaoClimatica"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#Testemunha -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/accident#Testemunha">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/accident#Pessoa"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#TipoApoio -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/accident#TipoApoio"/>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#Tombamento -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/accident#Tombamento">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/accident#AcidenteSemImpacto"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#Veicular -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/accident#Veicular">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/accident#FatorDeterminante"/>
+        <rdfs:comment>Alteração veicular proibida (descrever a alteração)
+Carga excessiva e/ou mal acondicionada
+Defeito na suspensão 
+Avarias e/ou desgaste excessivo no pneu 
+Defeito no sistema de freios
+Demais falhas mecânicas ou elétricas (descrever a falha)</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#Veiculo -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/accident#Veiculo">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/accident#veiculoEnvolvidoEmAcidente"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/accident#Infracao"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/accident#proprietarioEnvolvidoAcidente"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/accident#Pessoa"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/accident#veiculoEnvolvidoEmAcidente"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/accident#Acidente"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#VeiculoLeve -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/accident#VeiculoLeve">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/accident#Veiculo"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#VeiculoPesado -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/accident#VeiculoPesado">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/accident#Veiculo"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#Vento -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/accident#Vento">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/accident#CondicaoClimatica"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#Via -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/accident#Via"/>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#ViaDupla -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/accident#ViaDupla">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/accident#Via"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#ViaMultipla -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/accident#ViaMultipla">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/accident#Via"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#ViaSimples -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/accident#ViaSimples">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/accident#Via"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/accident#ViarioAmbiental -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/accident#ViarioAmbiental">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/accident#FatorDeterminante"/>
+        <rdfs:comment>Presença de animais na pista
+Acostamento em desnível
+Buraco na via
+Objeto estático sobre o leito carroçável
+Drenagem ineficiente
+Superelevação negativa
+Restrição de visibilidade (descrever a restrição)
+Demais problemas viário-ambientais (descrever o problema encontrado)</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/accident#EstadoFisico">
+        <rdfs:comment>Lesões Leves, Ileso, Lesões Graves, Morto</rdfs:comment>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/accident#AtropelamentoDeAnimal"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/accident#AtropelamentoDePessoa"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/accident#Colisao"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/accident#Ciclista"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/accident#Condutor"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/accident#Passageiro"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/accident#Pedestre"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+
