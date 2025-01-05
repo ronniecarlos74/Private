@@ -64,46 +64,57 @@
         </div>
     </div>
 
-    <script>
-        async function sendQuestion() {
-            const question = document.getElementById("question").value;
-            const responseDiv = document.getElementById("response");
-            const responseText = document.getElementById("response-text");
-            const responseQuery = document.getElementById("response-query");
-            const responseAnalysis = document.getElementById("response-analysis");
+<script>
+    async function sendQuestion() {
+        const question = document.getElementById("question").value;
+        const responseDiv = document.getElementById("response");
+        const responseText = document.getElementById("response-text");
+        const responseQuery = document.getElementById("response-query");
+        const responseAnalysis = document.getElementById("response-analysis");
 
-            if (!question.trim()) {
-                alert("Por favor, insira uma pergunta.");
-                return;
-            }
-
-            // Configuração do endpoint
-            const url = "https://b7d8-35-190-173-224.ngrok-free.app/ask"; // Substitua pelo URL do endpoint
-            const headers = { "Content-Type": "application/json" };
-            const data = { question };
-
-            try {
-                const response = await fetch(url, {
-                    method: "POST",
-                    headers: headers,
-                    body: JSON.stringify(data),
-                });
-
-                if (response.ok) {
-                    const result = await response.json();
-                    responseDiv.style.display = "block";
-                    responseText.textContent = result.response || "Nenhuma resposta disponível.";
-                    responseQuery.textContent = result.query || "Nenhuma consulta gerada.";
-                    responseAnalysis.textContent = result.analysis || "Nenhuma análise disponível.";
-                } else {
-                    responseDiv.style.display = "block";
-                    responseText.textContent = `Erro: ${response.status}. ${await response.text()}`;
-                }
-            } catch (error) {
-                responseDiv.style.display = "block";
-                responseText.textContent = `Erro de conexão: ${error.message}`;
-            }
+        // Valida se a pergunta foi preenchida
+        if (!question.trim()) {
+            alert("Por favor, insira uma pergunta.");
+            return;
         }
-    </script>
+
+        // URL do endpoint do ngrok
+        const url = "https://b7d8-35-190-173-224.ngrok-free.app/"; // Substitua pela URL correta do seu ngrok
+
+        // Configuração dos cabeçalhos e dados
+        const headers = {
+            "Content-Type": "application/json",
+        };
+        const data = {
+            question: question, // Formata a pergunta como JSON
+        };
+
+        try {
+            // Enviar requisição POST para o backend
+            const response = await fetch(url, {
+                method: "POST",
+                headers: headers,
+                body: JSON.stringify(data), // Converte o objeto para JSON
+            });
+
+            if (response.ok) {
+                // Se a resposta for 200 OK, trata o JSON retornado
+                const result = await response.json();
+                responseDiv.style.display = "block";
+                responseText.textContent = result.response || "Nenhuma resposta disponível.";
+                responseQuery.textContent = result.query || "Nenhuma consulta gerada.";
+                responseAnalysis.textContent = result.analysis || "Nenhuma análise disponível.";
+            } else {
+                // Se a resposta tiver erro, exibe o status e detalhes
+                responseDiv.style.display = "block";
+                responseText.textContent = `Erro: ${response.status}. ${await response.text()}`;
+            }
+        } catch (error) {
+            // Trata erros de conexão ou outros problemas
+            responseDiv.style.display = "block";
+            responseText.textContent = `Erro de conexão: ${error.message}`;
+        }
+    }
+</script>
 </body>
 </html>
