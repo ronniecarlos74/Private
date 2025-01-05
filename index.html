@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultas de Sinistros</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        textarea {
+            width: 100%;
+            height: 100px;
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .response {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Consultas de Sinistros</h1>
+        <p>Digite uma pergunta relacionada a sinistros e clique no botão para obter a resposta:</p>
+        <textarea id="question" placeholder="Digite sua pergunta aqui..."></textarea>
+        <button onclick="sendQuestion()">Enviar Pergunta</button>
+
+        <div id="response" class="response" style="display: none;">
+            <h3>Resposta:</h3>
+            <p id="response-text"></p>
+            <h4>Consulta Cypher:</h4>
+            <pre id="response-query"></pre>
+            <h4>Análise:</h4>
+            <p id="response-analysis"></p>
+        </div>
+    </div>
+
+    <script>
+        async function sendQuestion() {
+            const question = document.getElementById("question").value;
+            const responseDiv = document.getElementById("response");
+            const responseText = document.getElementById("response-text");
+            const responseQuery = document.getElementById("response-query");
+            const responseAnalysis = document.getElementById("response-analysis");
+
+            if (!question.trim()) {
+                alert("Por favor, insira uma pergunta.");
+                return;
+            }
+
+            // Configuração do endpoint
+            const url = "https://SEU-ENDPOINT-NGROK/ask"; // Substitua pelo URL do endpoint
+            const headers = { "Content-Type": "application/json" };
+            const data = { question };
+
+            try {
+                const response = await fetch(url, {
+                    method: "POST",
+                    headers: headers,
+                    body: JSON.stringify(data),
+                });
+
+                if (response.ok) {
+                    const result = await response.json();
+                    responseDiv.style.display = "block";
+                    responseText.textContent = result.response || "Nenhuma resposta disponível.";
+                    responseQuery.textContent = result.query || "Nenhuma consulta gerada.";
+                    responseAnalysis.textContent = result.analysis || "Nenhuma análise disponível.";
+                } else {
+                    responseDiv.style.display = "block";
+                    responseText.textContent = `Erro: ${response.status}. ${await response.text()}`;
+                }
+            } catch (error) {
+                responseDiv.style.display = "block";
+                responseText.textContent = `Erro de conexão: ${error.message}`;
+            }
+        }
+    </script>
+</body>
+</html>
