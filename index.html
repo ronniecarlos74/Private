@@ -79,14 +79,14 @@
         }
 
         // URL do endpoint do ngrok
-        const url = "https://b7d8-35-190-173-224.ngrok-free.app/"; // Substitua pela URL correta do seu ngrok
+        const url = "https://b7d8-35-190-173-224.ngrok-free.app/ask"; // Substitua pela URL correta do seu ngrok
 
         // Configuração dos cabeçalhos e dados
         const headers = {
             "Content-Type": "application/json",
         };
         const data = {
-            question: question, // Formata a pergunta como JSON
+            question: question.trim(), // Formata a pergunta como JSON
         };
 
         try {
