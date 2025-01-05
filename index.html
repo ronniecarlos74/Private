@@ -50,7 +50,7 @@
 <body>
     <div class="container">
         <h1>Safe Road AI</h1>
-        <p>Digite sua questão relacionada a sinistros de trânsito e clique no botão para obter a resposta. A base de dados possui sinistros ocorridos na BR-101 em Santa Catarina, do ano de 2024:</p>
+        <p>Digite sua questão relacionada a sinistros de trânsito e clique no botão para obter a resposta:</p>
         <textarea id="question" placeholder="Digite sua pergunta aqui..."></textarea>
         <button onclick="sendQuestion()">Enviar Pergunta</button>
 
@@ -79,38 +79,33 @@
         }
 
         // URL do endpoint do ngrok
-        const url = "https://b7d8-35-190-173-224.ngrok-free.app/ask"; // Substitua pela URL correta do seu ngrok
+        const url = "https://b7d8-35-190-173-224.ngrok-free.app/ask";
 
-        // Configuração dos cabeçalhos e dados
         const headers = {
             "Content-Type": "application/json",
         };
         const data = {
-            question: question.trim(), // Formata a pergunta como JSON
+            question: question.trim(),
         };
 
         try {
-            // Enviar requisição POST para o backend
             const response = await fetch(url, {
                 method: "POST",
                 headers: headers,
-                body: JSON.stringify(data), // Converte o objeto para JSON
+                body: JSON.stringify(data),
             });
 
             if (response.ok) {
-                // Se a resposta for 200 OK, trata o JSON retornado
                 const result = await response.json();
                 responseDiv.style.display = "block";
                 responseText.textContent = result.response || "Nenhuma resposta disponível.";
                 responseQuery.textContent = result.query || "Nenhuma consulta gerada.";
                 responseAnalysis.textContent = result.analysis || "Nenhuma análise disponível.";
             } else {
-                // Se a resposta tiver erro, exibe o status e detalhes
                 responseDiv.style.display = "block";
                 responseText.textContent = `Erro: ${response.status}. ${await response.text()}`;
             }
         } catch (error) {
-            // Trata erros de conexão ou outros problemas
             responseDiv.style.display = "block";
             responseText.textContent = `Erro de conexão: ${error.message}`;
         }
