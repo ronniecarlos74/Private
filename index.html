@@ -49,7 +49,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>Consultas de Sinistros</h1>
+        <h1>Safe Road AI</h1>
         <p>Digite sua questão relacionada a sinistros de trânsito e clique no botão para obter a resposta. A base de dados possui sinistros ocorridos na BR-101 em Santa Catarina, do ano de 2024:</p>
         <textarea id="question" placeholder="Digite sua pergunta aqui..."></textarea>
         <button onclick="sendQuestion()">Enviar Pergunta</button>
@@ -78,7 +78,7 @@
             }
 
             // Configuração do endpoint
-            const url = "https://SEU-ENDPOINT-NGROK/ask"; // Substitua pelo URL do endpoint
+            const url = "https://b7d8-35-190-173-224.ngrok-free.app/ask"; // Substitua pelo URL do endpoint
             const headers = { "Content-Type": "application/json" };
             const data = { question };
 
